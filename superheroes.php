@@ -65,8 +65,17 @@ $superheroes = [
 
 ?>
 
+<?php
+    header('Access-Control-Allow-Origin: *');
+?>
+
 <ul>
 <?php foreach ($superheroes as $superhero): ?>
   <li><?= $superhero['alias']; ?></li>
 <?php endforeach; ?>
 </ul>
+
+
+<?php
+    //var $result = array_search($name, array_column($superheroes,'name'));
+?>

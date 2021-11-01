@@ -5,7 +5,7 @@ window.onload = function(){
     httpRequest.open('GET', url);
     httpRequest.send();
         
-
+/*
     document.getElementById("button").addEventListener("click", function() {
         if (httpRequest.readyState === XMLHttpRequest.DONE) {
             if (httpRequest.status === 200) {
@@ -16,6 +16,25 @@ window.onload = function(){
             }
            }
 
+    });
+*/
+
+    document.getElementById("button").addEventListener("click", function() {
+        input = document.getElementById("name");
+        if(input == ""){
+            document.getElementById("response").innerHTML = "Superhero not found";
+        }
+        else{
+            if (httpRequest.readyState === XMLHttpRequest.DONE) {
+                if (httpRequest.status === 200) {
+                    var response = httpRequest.responseText;
+                    document.getElementById("response").innerHTML = response;
+                } 
+                else {
+                    document.getElementById("response").innerHTML = "Superhero not found";
+                }
+            }
+        }
     });
 
 
